@@ -1,0 +1,23 @@
+﻿@using Library
+@model IEnumerable<NoteDto>
+
+@{
+    // Add any necessary scripts or styles here
+}
+<div class="row">
+    <a href="note/create" class="btn btn-primary btn-block">Add New Notes</a>
+@foreach (var note in Model)
+{
+        <div class="container row mx-auto d-flex col-md-4">
+        <div class="card mx-4 my-2" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">@note.Title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">----------------</h6>
+                <p class="card-text max-height-card">@note.Description</p>
+                <a href="note/delete/@note.Id" class="card-link" onclick="return confirm('Are you sure you want to delete this note?')">Delete</a>
+                <a href="note/update/@note.Id" class="card-link" >edit</a>
+            </div>
+        </div>
+    </div>
+}
+</div>

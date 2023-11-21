@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Library;
+@model Note
+<form class="mx-5" method="post" asp-action="Update" asp-controller="Note">
+        <input asp-for="@Model.Id" type="hidden" name="id" id="id" aria-describedby="ID" value="@Model.Id">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" asp-for="@Model.Title" class="form-control" id="title" aria-describedby="titleHelp" name="title" value="@Model.Title">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" asp-for="@Model.Description" id="description" aria-describedby="descriptionHelp" name="description">@Model.Description</textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Edit Note</button>
+</form>
